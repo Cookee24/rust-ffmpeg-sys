@@ -308,7 +308,7 @@ fn build() -> io::Result<()> {
     // make it static
     configure.arg("--enable-static");
     configure.arg("--disable-shared");
-    #[cfg(not(target_env = "msvc"))]
+    #[cfg(not(target_os = "windows"))]
     {
         configure.arg("--enable-pthreads");
     }
